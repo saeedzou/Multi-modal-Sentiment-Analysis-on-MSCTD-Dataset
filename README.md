@@ -10,17 +10,17 @@ The MSCTD dataset is a collection of bilingual dialogues, where each utterance p
 
 ## Approach
 
-### Zeroth Phase
+### [Zeroth Phase](https://github.com/saeedzou/Deep-Learning-Project/blob/main/Phase%200.ipynb)
 
 In the zeroth phase, we created a dataset class and performed exploratory data analysis to understand the dataset better. We analyzed the sentiment distribution over different data splits, text length distribution, number of images per scene, and number of faces per image.
 
-### First Phase
+### [First Phase](https://github.com/saeedzou/Deep-Learning-Project/blob/main/Phase%201.ipynb)
 
 In the first phase, we experimented with using only the image to predict the sentiment. We first cropped faces in each image and trained a sentiment classifier on the cropped faces. We then used this sentiment classifier to detect how many faces in each image have each sentiment. We passed these results to a multi-layer perceptron (MLP) to predict the overall sentiment of the image. We also applied data augmentation techniques mentioned in the paper PRIME to improve the accuracy.
 
 Afterwards, we fine-tuned a sentiment classifier on the entire image, and combined these results with the MLP results to improve the accuracy. However, we found that using only the image was not indicative enough for sentiment analysis, and our best accuracy in this phase was 42%.
 
-### Second Phase
+### [Second Phase](https://github.com/saeedzou/Deep-Learning-Project/blob/main/Phase%202.ipynb)
 
 In the second phase, we experimented with using only the text to predict the sentiment. We first used the TF-IDF method to convert the text into features and trained an MLP on top of it. The model achieved an accuracy of 52%.
 
@@ -30,7 +30,7 @@ Finally, we fine-tuned a pre-trained BERT model to predict the sentiment. We use
 
 Overall, our approach involved using various text processing techniques, including TF-IDF, word embeddings, and pre-trained BERT, to generate text features for sentiment analysis. We experimented with different methods and found that fine-tuning pre-trained BERT gave the best performance.
 
-### Third Phase
+### [Third Phase](https://github.com/saeedzou/Deep-Learning-Project/blob/main/Phase%203.ipynb)
 
 In the third phase, we explored multi-modal sentiment analysis by combining both the text and image modalities.
 
